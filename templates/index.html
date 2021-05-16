@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block body%}
+    <div class="content">
+        {% if items|length < 1 %}
+            <div class="alert alert-dark" role="alert">
+                No hay tareas! Porfavor inserte una nueva tarea
+            </div>
+        {% else %}
+            <table class="table table-bordered">
+                <thead class="table-success">
+                    <tr>
+                        <th scope="col">Actividad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in items %}
+                    <tr>
+                        <td>{{i.nombre}}</td>
+                        <td>{{i.fechaCreacion.date()}}</td>
+                        <td>
+                            <a href="/update/{{i.idActividad}}" class="btn btn-warning">Actualizar</a>
+                            <a href="/delete/{{i.idActividad}}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+
+
+        <form action="/" method="post" class="input-group mb-3">
+            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre de la tarea...">
+            <input type="submit" value="Guardar" class="btn btn-success">
+        </form>
+
+    </div>
+
+
+
+{% endblock %}

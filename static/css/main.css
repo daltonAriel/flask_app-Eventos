@@ -1,0 +1,19 @@
+table{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content{
+    margin: 0 auto;
+    width: 50%;
+}
+form{
+    margin-top: 20px;
+}
+
+alert alert-dark{
+    text-align: center;
+}
+.alert{
+    text-align: center;
+}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div class="content">
+        <form action="/update/{{item.idActividad}}" method="POST" class="input-group mb-3">
+            <input type="text" name="nombre" id="nombre"value="{{item.nombre}}" class="form-control" placeholder="Nombre de la tarea...">
+            <input type="submit" value="Actualizar" class="btn btn-info">
+        </form>
+    </div>
+{% endblock %}
